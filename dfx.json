@@ -1,7 +1,11 @@
 {
   "canisters": {
+    "nftmw": {
+      "main": "src/nftmw/main.mo",
+      "type": "motoko"
+    },
     "nftmwnew_backend": {
-      "main": "src/nftmwnew_backend/main.mo",
+      "main": "src/nftmwnew_backend/nft.mo",
       "type": "motoko"
     },
     "nftmwnew_frontend": {
