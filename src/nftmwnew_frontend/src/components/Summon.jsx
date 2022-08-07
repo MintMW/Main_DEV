@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // React hook form easiest way to to pull up data that has been uploaded or enter to a form
+import { nftmw } from "../../../declarations/nftmw";
 import MoonWalker from "./Moonwalkers";
 
 function Summon() {
@@ -14,8 +15,8 @@ function Summon() {
     const imageArray = await image.arrayBuffer();
     const imageByteData = [...new Uint8Array(imageArray)];// 3 dot notation to insert empty array
 
-    const newNFT = await main.mint(imageByteData, name);
-    console.log(newNFT.toText());
+    const newNFT = await nftmw.mint(imageByteData, name); //calling our method from Bk canister (nftmw) 
+    console.log(newNFT.toText());//as its gonna come as a principal data type have to convert
     setNFTPrincipal(newNFT);
     setLoaderHidden(true);
   }
