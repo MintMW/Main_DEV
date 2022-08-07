@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/logo.png";
 import { Actor, HttpAgent } from "@dfinity/agent";
 import { idlFactory } from "../../../declarations/nftmwnew_backend";
 import { Principal } from "@dfinity/principal";
@@ -22,14 +21,15 @@ function Moonwalker(props) {
 
     const name = await NFTActor.getName();
     const owner = await NFTActor.getOwner();
-    const imageData = await NFTActor.getAsset();
-    const imageContent = new Uint8Array(imageData); //converting it into 
-    const image = URL.createObjectURL( //nat8 nos to Blob data type
-    new Blob([imageContent.buffer], { type: "image/png" }) //then Blob data type can be converted
+    const imageData = await NFTActor.getAsset();//As right now the image is in the form of ARRAy of 8BIT number,
+    const imageContent = new Uint8Array(imageData); //so have to convert it into something which can recognisable to js :P
+    const image = URL.createObjectURL( //NAT8 number to Blob data type,now this is converting the image content (NAT8),
+    new Blob([imageContent.buffer], { type: "image/png" }) //into a actual OBJECT URL,which can be use in FR,
+                                      //then pass into Blob data type,which can be converted inot any desired data type.
     );
 
     setName(name);
-    setOwner(owner.toText());
+    setOwner(owner.toText()); // As earlier its in Pricipal data type so have to convert it into text data type form !!
     setImage(image);
   }
 
