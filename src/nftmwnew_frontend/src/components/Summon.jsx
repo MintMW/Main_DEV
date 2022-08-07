@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"; // React hook form easiest way to to pull up data that has been uploaded or enter to a form
 import MoonWalker from "./Moonwalkers";
 
 function Summon() {
