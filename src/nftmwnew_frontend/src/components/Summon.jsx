@@ -71,7 +71,7 @@ function Summon() {
     return (
       <div className="minter-container">
         <h3 className="Typography-root makeStyles-title-99 Typography-h3 form-Typography-gutterBottom">
-        🌟 🌟  Congratulations 🌟  Your NFT is MINTED Successfully 💫  !!
+        🌟 CONGRATULATIONS 🌟  Your NFT is MINTED Successfully 💫  !!
         </h3>
         <div className="horizontal-center">
           <MoonWalker id={nftPrincipal.toText()} />
